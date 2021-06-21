@@ -4,7 +4,7 @@ import { TransactionsTable } from "./components/TransactionsTable";
 
 import { GlobalStyles } from "./styles/global";
 
-export function App() {
+export const App = () => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ export function App() {
       <GlobalStyles />
     </>
   );
-}
+};
