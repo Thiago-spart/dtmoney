@@ -4,8 +4,8 @@ export const GlobalStyles = createGlobalStyle`
 	:root {
 		--red: #E52E40;
 		--green: #33CC95;
-		--blue: #5429CC;
 
+		--blue: #5429CC;
 		--blue-light: #6933FF;
 
 		--text-title: #363F5F;
@@ -57,20 +57,21 @@ export const GlobalStyles = createGlobalStyle`
 	button {
 		cursor: pointer;
 
-		[disabled] {
-			opacity: 0.6;
-			cursor: not-allowed;
-		}
 	}
 
+	[disabled] {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+	
 	.react-modal-overlay {
 		background: rgba(0,0,0,0.5);
 
 		position: fixed;
-		top: 0;
 		bottom: 0;
 		right: 0;
 		left: 0;
+		top: 0;
 
 		display: flex;
 		align-items: center;
@@ -80,7 +81,7 @@ export const GlobalStyles = createGlobalStyle`
 	.react-modal-content {
 		width: 100%;
 		max-width: 576px;
-		background: var(----background);
+		background: var(--background);
 		padding: 3rem;
 		position: relative;
 		border-radius: 0.25rem;

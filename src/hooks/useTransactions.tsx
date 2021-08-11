@@ -16,8 +16,6 @@ interface Transaction {
   createdAt: string;
 }
 
-// type TransactionInput = Pick<Transaction, 'title' | 'amount' | 'type' | 'category'>
-
 type TransactionInput = Omit<Transaction, "id" | "createdAt">;
 
 interface TransactionProviderProps {
@@ -45,8 +43,8 @@ export const TransactionsProvider = ({
   }, []);
 
   async function createTransaction(transactionInput: TransactionInput) {
-    const response = await api.post("/transactions", {
-      transactionInput,
+    const response = await api.post("transactions", {
+      ...transactionInput,
       createdAt: new Date(),
     });
     const { transaction } = response.data;
