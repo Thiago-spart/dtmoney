@@ -12,9 +12,10 @@ export const Container = styled.form`
 		width: 100%;
 		padding: 0 1.5rem;
 		height: 4rem;
-		border-radius: 0%.25rem;
-		border: 1px solid #d7d7d7;
+		
+		border-radius: 0.25rem;
 		background: #e7e9ee;
+		border: 1px solid #d7d7d7;
 
 		font-weight: 400;
 		font-size: 1rem;
@@ -50,7 +51,7 @@ export const Container = styled.form`
 export const TransactionTypeContainer = styled.div`
 	margin: 1rem 0;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 0.5rem;
 `
 
@@ -68,8 +69,8 @@ export const RadioBox = styled.button<RadioBoxProps>`
 	height: 4rem;
 	border: 1px solid #d7d7d7;
 	border-radius: 0.25rem;
-	background-color: ${(props) => props.isActive
-		? transparentize(0.9, colors[props.activeColor])
+	background: ${(props) => props.isActive
+		? transparentize(0.7, colors[props.activeColor])
 		: 'transparent'
 	};
 	display: flex;
