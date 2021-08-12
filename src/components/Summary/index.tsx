@@ -5,6 +5,7 @@ import outcomeImg from "../../assets/outcome.svg";
 import totalImg from "../../assets/total.svg";
 
 import { Container } from "./styles";
+import { AmountCard } from "./AmountCard";
 
 export const Summary = () => {
   const { transactions } = useTransactions();
@@ -30,45 +31,24 @@ export const Summary = () => {
 
   return (
     <Container>
-      <div>
-        <header>
-          <p>Entradas</p>
-          <img src={incomeImg} alt="entradas" />
-        </header>
-        <strong>
-          {new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(summary.deposits)}
-        </strong>
-      </div>
+      <AmountCard
+        amount={summary.deposits}
+        amountDescription="entradas"
+        imgPath={incomeImg}
+      />
 
-      <div>
-        <header>
-          <p>Saidas</p>
-          <img src={outcomeImg} alt="saidas" />
-        </header>
-        <strong>
-          -{" "}
-          {new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(summary.withdraws)}
-        </strong>
-      </div>
+      <AmountCard
+        amount={summary.withdraws}
+        amountDescription="saídas"
+        imgPath={outcomeImg}
+      />
 
-      <div className="highlight-background">
-        <header>
-          <p>Total</p>
-          <img src={totalImg} alt="total" />
-        </header>
-        <strong>
-          {new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(summary.total)}
-        </strong>
-      </div>
+      <AmountCard
+        amount={summary.total}
+        amountDescription="total"
+        imgPath={totalImg}
+        greenCard
+      />
     </Container>
   );
 };
